@@ -1,0 +1,109 @@
+<!-- Сгенерировано scripts/build-previews.mjs из src/. Не править вручную. -->
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Настройки — Google Apps</title>
+    <link rel="stylesheet" href="../src/options.css?v=1788754797174" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Google Apps + Mail Checker</h1>
+      <p class="head-status">
+        <span id="status-line" class="muted"></span>
+        <span id="save-flash" class="flash"></span>
+      </p>
+
+      <section class="card">
+        <h2>Счётчик писем</h2>
+
+        <label class="row">
+          <span class="row-label">
+            Показывать счётчик
+            <small>Непрочитанные письма на иконке расширения и на плитке «Почта»</small>
+          </span>
+          <span class="row-control">
+            <input id="showCounter" type="checkbox" />
+          </span>
+        </label>
+
+        <label class="row">
+          <span class="row-label">
+            Период
+            <small>0 — считать все непрочитанные письма во «Входящих»</small>
+          </span>
+          <span class="row-control">
+            <input id="days" type="number" min="0" max="30" step="1" />
+            <span class="unit">дн.</span>
+          </span>
+        </label>
+
+        <label class="row">
+          <span class="row-label">
+            Метка Gmail
+            <small>Пусто — весь раздел «Входящие». Категории («Несортированные») фидом
+              не фильтруются: заведите в Gmail фильтр, который вешает метку, и укажите её здесь</small>
+          </span>
+          <span class="row-control">
+            <input id="label" type="text" placeholder="без метки" maxlength="64" />
+          </span>
+        </label>
+
+        <label class="row">
+          <span class="row-label">
+            Частота проверки
+            <small>Как часто фоново опрашивать Gmail</small>
+          </span>
+          <span class="row-control">
+            <input id="pollMinutes" type="number" min="1" max="240" step="1" />
+            <span class="unit">мин</span>
+          </span>
+        </label>
+
+        <label class="row">
+          <span class="row-label">
+            Номер аккаунта Google
+            <small>Подставляется в ссылки как <code>/u/N/</code>. Первый вошедший аккаунт — 0</small>
+          </span>
+          <span class="row-control">
+            <input id="accountIndex" type="number" min="0" max="9" step="1" />
+          </span>
+        </label>
+
+        <p class="query-preview">Источник: <code id="feed-preview"></code></p>
+        <p id="counter-note" class="muted note"></p>
+
+        <div class="buttons">
+          <button id="refresh" class="ghost-button" type="button">Проверить сейчас</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Плитки</h2>
+        <p class="muted note">
+          Порядок плиток и состав «Избранного» меняются перетаскиванием прямо в popup —
+          нажмите карандаш. Здесь можно скрыть ненужные сервисы.
+        </p>
+        <div class="buttons">
+          <button id="show-all" class="ghost-button" type="button">Показать все</button>
+          <button id="reset" class="ghost-button" type="button">Сбросить раскладку</button>
+        </div>
+        <ul id="service-list" class="service-list"></ul>
+      </section>
+    </div>
+
+    <template id="service-row-template">
+      <li class="service-row">
+        <label class="service-toggle">
+          <input type="checkbox" />
+          <img alt="" width="20" height="20" />
+          <span class="service-name"></span>
+        </label>
+        <span class="service-zone"></span>
+      </li>
+    </template>
+
+    <script src="chrome-stub.js?v=1788754797174"></script>
+    <script type="module" src="../src/options.js?v=1788754797174"></script>
+  </body>
+</html>

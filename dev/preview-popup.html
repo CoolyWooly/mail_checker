@@ -1,0 +1,66 @@
+<!-- Сгенерировано scripts/build-previews.mjs из src/. Не править вручную. -->
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Google Apps</title>
+    <link rel="stylesheet" href="../src/popup.css?v=1788754797174" />
+  </head>
+  <body>
+    <div id="scroller" class="scroller">
+      <section class="card">
+        <header class="card-head">
+          <h1>Избранное</h1>
+          <button id="edit" class="round-button" type="button" title="Изменить порядок">
+            <svg class="icon-pencil" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 17.25V21h3.75L17.8 9.94l-3.75-3.75L3 17.25zM20.7 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+            </svg>
+            <svg class="icon-done" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" />
+            </svg>
+          </button>
+        </header>
+        <div id="favorites" class="grid" data-zone="favorites"></div>
+      </section>
+
+      <div id="others" class="grid grid-rest" data-zone="others"></div>
+
+      <section id="hidden-section" class="hidden-section" hidden>
+        <h2>Скрытые</h2>
+        <div id="hidden" class="grid grid-rest"></div>
+      </section>
+
+      <p id="edit-hint" class="edit-hint" hidden>
+        Перетащите иконки, чтобы изменить порядок. <b>×</b> убирает плитку в «Скрытые»
+      </p>
+    </div>
+
+    <footer class="footer">
+      <button id="status" class="status" type="button"></button>
+      <button id="options" class="round-button small" type="button" title="Настройки">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm9.4 4c0-.6-.1-1.2-.2-1.8l2-1.5-2-3.4-2.3 1a7.6 7.6 0 0 0-3-1.8L15.5 2h-4l-.4 2.5c-1.1.3-2.1.9-3 1.7l-2.3-1-2 3.5 2 1.5a7.7 7.7 0 0 0 0 3.6l-2 1.5 2 3.4 2.3-1c.9.8 1.9 1.4 3 1.7l.4 2.6h4l.4-2.6c1.1-.3 2.1-.9 3-1.7l2.3 1 2-3.4-2-1.5c.1-.6.2-1.2.2-1.8z" />
+        </svg>
+      </button>
+    </footer>
+
+    <!-- Внешний .tile — только контейнер для перетаскивания и позиционирования.
+         Кнопки лежат рядом, а не одна в другой: интерактивный элемент внутри
+         интерактивного ломает и семантику, и клавиатуру. -->
+    <template id="tile-template">
+      <div class="tile">
+        <button class="tile-open" type="button">
+          <span class="tile-icon">
+            <img alt="" width="40" height="40" draggable="false" />
+            <span class="tile-badge" hidden></span>
+          </span>
+          <span class="tile-label"></span>
+        </button>
+        <button class="tile-action" type="button" tabindex="-1"></button>
+      </div>
+    </template>
+
+    <script src="chrome-stub.js?v=1788754797174"></script>
+    <script type="module" src="../src/popup.js?v=1788754797174"></script>
+  </body>
+</html>

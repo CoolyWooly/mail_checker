@@ -1,0 +1,122 @@
+:root {
+  --bg: #f8f9fa;
+  --card: #ffffff;
+  --fg: #202124;
+  --muted: #5f6368;
+  --line: #dadce0;
+  --hover: #f1f3f4;
+  --blue: #1a73e8;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #202124;
+    --card: #292a2d;
+    --fg: #e8eaed;
+    --muted: #9aa0a6;
+    --line: #3c4043;
+    --hover: #35363a;
+    --blue: #8ab4f8;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  background: var(--bg);
+  color: var(--fg);
+  font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.wrap { max-width: 680px; margin: 0 auto; }
+
+h1 { font-size: 20px; margin: 0 0 4px; }
+h2 { font-size: 14px; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+
+.muted { color: var(--muted); font-size: 13px; }
+
+/* Строка статуса и «Сохранено» живут рядом, а не в одном элементе: раньше таймер
+   flash() затирал текст статуса счётчика. */
+.head-status { display: flex; align-items: baseline; gap: 8px; margin: 0 0 4px; min-height: 20px; }
+.flash { color: var(--blue); font-size: 13px; white-space: nowrap; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 16px 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+.row:last-of-type { border-bottom: 0; }
+
+.row-label { display: flex; flex-direction: column; }
+.row-label small { color: var(--muted); font-size: 12px; }
+
+.row-control { display: flex; align-items: center; gap: 6px; flex: none; }
+.unit { color: var(--muted); font-size: 12px; }
+
+input[type="number"] {
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--fg);
+  font: inherit;
+}
+input[type="number"] { width: 80px; }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  background: var(--hover);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.query-preview { margin: 14px 0 0; font-size: 12px; color: var(--muted); }
+
+.buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+
+.ghost-button {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 14px;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.ghost-button:hover { background: var(--hover); }
+.ghost-button:disabled { opacity: 0.5; cursor: default; }
+
+.service-list { list-style: none; margin: 12px 0 0; padding: 0; }
+
+.service-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.service-row:last-child { border-bottom: 0; }
+
+.service-toggle { display: flex; align-items: center; gap: 10px; flex: 1; cursor: pointer; }
+.service-name { font-size: 13px; }
+
+.service-zone { color: var(--muted); font-size: 12px; }
+.note { margin: 0 0 12px; font-size: 12px; }
+input[type="text"] { padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--fg); font: inherit; width: 160px; }
+input:disabled { opacity: 0.5; }
