@@ -168,11 +168,19 @@ dev/              страницы с заглушкой Chrome API для пр�
 
 ```bash
 npm test              # node --test: normalize, feedUrl, entryDates, fetchUnread, badgeText
-npm run build:icons   # icons/*.png и icons/services/*.svg — после правки графики
+npm run build:icons   # icons/icon*.png — иконка самого расширения
+npm run fetch:icons   # icons/services/*.png — официальные логотипы сервисов
 npm run build:previews # dev/preview-*.html — после правки src/*.html
 ```
 
-Иконки и превью собираются из кода, без внешних зависимостей.
+Иконка расширения и превью собираются из кода, без внешних зависимостей.
+
+Логотипы сервисов в `icons/services/` — официальные, скачаны с `gstatic.com`
+(у Colab и AI Studio своих записей там нет, взяты их фавиконки). Источники
+закреплены в `scripts/fetch-service-icons.mjs`; скрипт нужен только при
+добавлении сервиса или смене логотипа — сами файлы лежат в репозитории,
+расширение в сеть за ними не ходит. Логотипы принадлежат Google и остаются
+её товарными знаками: здесь они используются для обозначения самих сервисов.
 
 ## Выпуск релиза
 

@@ -6,7 +6,8 @@
   "description": "Chrome MV3: лаунчер сервисов Google и счётчик непрочитанных писем Gmail",
   "scripts": {
     "test": "node --test \"test/*.test.js\"",
-    "build:icons": "node scripts/build-icons.mjs && node scripts/build-service-icons.mjs",
+    "build:icons": "node scripts/build-icons.mjs",
+    "fetch:icons": "node scripts/fetch-service-icons.mjs",
     "build:previews": "node scripts/build-previews.mjs",
     "pack": "rm -rf dist && mkdir -p dist && zip -r dist/extension.zip manifest.json src icons -x '*.DS_Store' -x '__MACOSX/*'"
   }

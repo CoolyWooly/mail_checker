@@ -41,7 +41,7 @@ export const ALL_SERVICE_IDS = SERVICES.map((s) => s.id);
 export const SERVICE_BY_ID = Object.fromEntries(SERVICES.map((s) => [s.id, s]));
 
 export function iconPath(id) {
-  return `/icons/services/${id}.svg`;
+  return `/icons/services/${id}.png`;
 }
 
 export function serviceUrl(service, accountIndex = 0) {
