@@ -132,8 +132,11 @@ No test account is needed: sign in to any Gmail account in the browser and the u
 automatically», если хотите выбрать момент публикации сами.
 
 Когда расширение опубликуют, у него будет новый ID: версия из GitHub Releases и версия из
-магазина — два разных расширения. В README в разделе «Установка» стоит первым делом дать
-ссылку на магазин.
+магазина — два разных расширения. Все кнопки и ссылки на магазин в README берут адрес из
+одной ссылки `[webstore]` в самом конце файла: замените её на
+`https://chromewebstore.google.com/detail/<ID>`. После этого бейджи в шапке можно
+заменить на живые: `https://img.shields.io/chrome-web-store/v/<ID>`, `/users/<ID>`,
+`/rating/<ID>`.
 
 ## Обновления
 
