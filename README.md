@@ -11,6 +11,7 @@
 ![Версия](https://img.shields.io/github/manifest-json/v/CoolyWooly/mail_checker?label=%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F&color=34a853)
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-4285f4)
 [![Без трекеров](https://img.shields.io/badge/%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80%D1%8B-%D0%BD%D0%B5%D1%82-ea4335)](PRIVACY.md)
+[![Лицензия MIT](https://img.shields.io/badge/%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-MIT-fbbc04)](LICENSE)
 
 [Возможности](#возможности) · [Установка](#установка) · [Как пользоваться](#как-пользоваться) · [Настройки](#настройки) · [Вопросы](#вопросы-и-ответы) · [Конфиденциальность](#конфиденциальность)
 
@@ -245,7 +246,8 @@ OAuth, от которого расширение сознательно отк�
 оставьте отзыв в [Chrome Web Store][webstore].
 
 Хотите поправить код или собрать расширение сами — всё про сборку, тесты и выпуск версий
-в [руководстве для разработчиков](docs/development.md).
+в [руководстве для разработчиков](docs/development.md). Код распространяется под
+[лицензией MIT](LICENSE).
 
 ---
 

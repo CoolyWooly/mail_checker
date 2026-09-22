@@ -2,6 +2,7 @@
   "name": "mail-checker",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "description": "Chrome MV3: лаунчер сервисов Google и счётчик непрочитанных писем Gmail",
   "scripts": {
