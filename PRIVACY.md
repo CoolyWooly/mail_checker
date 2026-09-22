@@ -4,8 +4,9 @@
 
 *English version below.*
 
-Коротко: расширение не собирает, не передаёт и не продаёт ваши данные. Вся работа
-происходит в вашем браузере.
+Коротко: чтобы посчитать непрочитанные письма, расширение читает фид Gmail, то есть
+получает доступ к вашей переписке. Эти данные обрабатываются только в вашем браузере:
+расширение не передаёт и не продаёт их.
 
 ## К каким данным есть доступ
 
@@ -55,8 +56,9 @@ Limited Use.
 
 **Apps Launcher & Mail Checker for Google**. Effective September 22, 2026.
 
-In short: the extension does not collect, transmit or sell your data. Everything happens
-inside your browser.
+In short: to count unread mail, the extension reads the Gmail feed, which means it has
+access to your personal communications. That data is processed only inside your browser;
+the extension never transmits or sells it.
 
 ## Data the extension accesses
 
