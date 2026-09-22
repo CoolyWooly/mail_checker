@@ -1,4 +1,4 @@
-# Google Apps + Mail Checker
+# Apps Launcher & Mail Checker for Google
 
 Расширение Chrome (Manifest V3): лаунчер сервисов Google в стиле «сетки приложений»
 и счётчик непрочитанных писем Gmail на иконке расширения.

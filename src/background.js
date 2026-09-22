@@ -53,7 +53,7 @@ async function paintBadge(state, settings) {
   await chrome.action.setBadgeText({ text: badgeText(state) });
   await chrome.action.setBadgeBackgroundColor({ color });
 
-  let title = 'Google Apps';
+  let title = 'Apps Launcher';
   if (state.authState === 'off') {
     // счётчик выключен в настройках — заголовок без цифр
   } else if (state.authState === 'signed_out') {

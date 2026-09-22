@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Google Apps + Mail Checker",
+  "name": "Apps Launcher & Mail Checker for Google",
   "version": "1.0.0",
   "description": "Сетка сервисов Google в один клик и счётчик непрочитанных писем Gmail за настраиваемый период.",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApvK9RcoxU78n0wWbVVAXWXlJL8NVWaTc1qyCOWNYDlT2+n51z/Tv2D22ItM5Tw41MtYfSPINTkbEo+javygej14IRUiPwSzENpcQ8rbSJoF8W/MVXjNqWiRJKTEUIJZppXDK7zCzYTHXMsHjfq5g5S6ic9onf46u5tSv5db1kk9HLTXpzzfynqp3iCpnoawCU5TiuLGccHKDPgead6Ipsp/uESoeXVoOGDwzn8huJ6uq+9vGOl+Tzy9fpKRojEUITsdQAv6ogp3lXnzOqdfPUeNAMwb1lCORKJyhepLmipgPDvw73OSwWUZfSLps0faVCj8x6k7cWEpCde88sAnauQIDAQAB",
@@ -13,7 +13,7 @@
   ],
   "action": {
     "default_popup": "src/popup.html",
-    "default_title": "Google Apps",
+    "default_title": "Apps Launcher",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
