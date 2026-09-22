@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>promo-small.html</title>
+    <link rel="stylesheet" href="common.css" />
+    <style>
+      /* Малый промо-баннер 440×280: магазин советует насыщенный фон без белого и мелкого текста. */
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 36px;
+        color: #fff;
+        background:
+          radial-gradient(260px 200px at 100% 0%, rgba(255, 255, 255, 0.16), transparent 70%),
+          radial-gradient(240px 220px at 0% 100%, rgba(23, 78, 166, 0.9), transparent 70%),
+          linear-gradient(135deg, #1a73e8, #1557b0);
+      }
+      .head { display: flex; align-items: center; gap: 18px; }
+      .head img { width: 84px; height: 84px; flex: none; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25)); }
+      .name { font-size: 25px; font-weight: 700; line-height: 1.12; letter-spacing: -0.01em; }
+      .name small { display: block; margin-top: 4px; font-size: 15px; font-weight: 500; opacity: 0.8; }
+      p { margin: 24px 0 0; font-size: 16px; line-height: 1.4; opacity: 0.95; }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <img src="../../icons/icon.svg" alt="" />
+      <div class="name">Apps Launcher<br />&amp; Mail Checker<small>for Google</small></div>
+    </div>
+    <p>Сервисы Google в один клик и счётчик непрочитанных писем Gmail</p>
+
+    <script type="module">
+      import { report } from './common.js';
+      report(document.fonts.ready.then(() => document.images[0].decode()));
+    </script>
+  </body>
+</html>

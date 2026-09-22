@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>screenshot-1-popup.html</title>
+    <link rel="stylesheet" href="common.css" />
+  </head>
+  <body>
+    <section class="copy">
+      <div class="brand"><img src="../../icons/icon128.png" alt="" />Apps Launcher &amp; Mail Checker</div>
+      <h1>Сервисы Google в&nbsp;один клик</h1>
+      <p>Почта, Диск, Календарь, Документы и ещё два десятка сервисов в одной сетке. На иконке — число непрочитанных писем Gmail.</p>
+    </section>
+
+    <div class="window" data-badge="7" data-pressed>
+      <div class="page"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="popup"><iframe src="../../dev/preview-popup.html" title="popup"></iframe></div>
+    </div>
+
+    <script type="module">
+      import { mountPopup, report } from './common.js';
+      report(mountPopup(document.querySelector('.popup iframe'), {}));
+    </script>
+  </body>
+</html>

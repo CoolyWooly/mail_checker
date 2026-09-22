@@ -9,6 +9,8 @@
     "build:icons": "node scripts/build-icons.mjs",
     "fetch:icons": "node scripts/fetch-service-icons.mjs",
     "build:previews": "node scripts/build-previews.mjs",
-    "pack": "rm -rf dist && mkdir -p dist && zip -r dist/extension.zip manifest.json src icons -x '*.DS_Store' -x '__MACOSX/*'"
+    "pack": "rm -rf dist && mkdir -p dist && zip -r dist/extension.zip manifest.json src icons -x '*.DS_Store' -x '__MACOSX/*'",
+    "pack:store": "node scripts/pack-store.mjs",
+    "build:store-assets": "node scripts/build-previews.mjs && node scripts/build-store-assets.mjs"
   }
 }

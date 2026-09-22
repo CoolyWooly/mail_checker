@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>screenshot-3-options.html</title>
+    <link rel="stylesheet" href="common.css" />
+  </head>
+  <body>
+    <section class="copy">
+      <div class="brand"><img src="../../icons/icon128.png" alt="" />Apps Launcher &amp; Mail Checker</div>
+      <h1>Только свежие письма</h1>
+      <p>Счётчик за последние дни, по метке и для нужного аккаунта. Без OAuth и паролей: расширение читает фид Gmail в уже открытой сессии браузера.</p>
+    </section>
+
+    <div class="window" data-tab="Настройки — Apps Launcher" data-badge="7">
+      <iframe class="options" src="../../dev/preview-options.html" title="options"></iframe>
+    </div>
+
+    <script type="module">
+      import { mountOptions, report } from './common.js';
+      report(mountOptions(document.querySelector('iframe.options')));
+    </script>
+  </body>
+</html>

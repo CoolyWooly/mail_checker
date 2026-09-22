@@ -1,0 +1,211 @@
+/* Общая верстка картинок для Chrome Web Store. Размер холста задаёт
+   scripts/build-store-assets.mjs, body просто занимает весь viewport. */
+
+:root {
+  --bg: #f3f6fb;
+  --blob-blue: rgba(66, 133, 244, 0.20);
+  --blob-red: rgba(234, 67, 53, 0.12);
+  --blob-yellow: rgba(251, 188, 4, 0.16);
+  --blob-green: rgba(52, 168, 83, 0.14);
+  --fg: #202124;
+  --muted: #5f6368;
+  --window: #ffffff;
+  --tabstrip: #e3e7ec;
+  --icon: #5f6368;
+  --omnibox: #f1f3f4;
+  --pressed: #e3e5e8;
+  --skeleton: #f1f3f4;
+  --window-shadow: 0 30px 70px rgba(32, 33, 36, 0.16), 0 4px 14px rgba(32, 33, 36, 0.08);
+  --popup-shadow: 0 6px 16px 4px rgba(60, 64, 67, 0.16), 0 1px 3px rgba(60, 64, 67, 0.3);
+  --badge: #d93025;
+}
+
+.dark {
+  --bg: #17181b;
+  --blob-blue: rgba(138, 180, 248, 0.16);
+  --blob-red: rgba(242, 139, 130, 0.08);
+  --blob-yellow: rgba(253, 214, 99, 0.08);
+  --blob-green: rgba(129, 201, 149, 0.10);
+  --fg: #e8eaed;
+  --muted: #9aa0a6;
+  --window: #35363a;
+  --tabstrip: #202124;
+  --icon: #c4c7c5;
+  --omnibox: #282a2d;
+  --pressed: #4a4c50;
+  --skeleton: #3c3d41;
+  --window-shadow: 0 30px 70px rgba(0, 0, 0, 0.5), 0 4px 14px rgba(0, 0, 0, 0.3);
+  --popup-shadow: 0 6px 16px 4px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+* { box-sizing: border-box; }
+
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+
+body {
+  position: relative;
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background:
+    radial-gradient(420px 320px at 8% 12%, var(--blob-blue), transparent 70%),
+    radial-gradient(360px 300px at 30% 96%, var(--blob-green), transparent 70%),
+    radial-gradient(420px 340px at 96% 4%, var(--blob-yellow), transparent 70%),
+    radial-gradient(380px 320px at 88% 100%, var(--blob-red), transparent 70%),
+    var(--bg);
+}
+
+/* ——— Текстовая колонка ——— */
+
+.copy {
+  position: absolute;
+  left: 56px;
+  top: 50%;
+  width: 330px;
+  transform: translateY(-50%);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 26px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+.brand img { width: 32px; height: 32px; border-radius: 7px; box-shadow: 0 1px 3px rgba(32, 33, 36, 0.2); }
+
+.copy h1 {
+  margin: 0 0 16px;
+  font-size: 38px;
+  line-height: 1.12;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+/* ——— Окно браузера ——— */
+
+.window {
+  position: absolute;
+  top: 30px;
+  left: 420px;
+  right: 32px;
+  bottom: -40px; /* нижний край уходит за холст */
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--window);
+  box-shadow: var(--window-shadow);
+}
+
+.tabstrip {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  height: 36px;
+  padding: 0 12px;
+  background: var(--tabstrip);
+}
+
+.lights { display: flex; gap: 7px; align-self: center; }
+.lights i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }
+.lights i:nth-child(2) { background: #febc2e; }
+.lights i:nth-child(3) { background: #28c840; }
+
+.tab {
+  width: 200px;
+  height: 29px;
+  padding: 7px 12px 0;
+  border-radius: 9px 9px 0 0;
+  background: var(--window);
+  color: var(--fg);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 42px;
+  padding: 0 10px;
+}
+
+.toolbar svg { width: 18px; height: 18px; fill: var(--icon); flex: none; }
+.toolbar .nav { display: flex; gap: 10px; margin-right: 6px; }
+
+.omnibox {
+  flex: 1;
+  height: 30px;
+  margin-right: 8px;
+  border-radius: 15px;
+  background: var(--omnibox);
+}
+
+.ext {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 50%;
+}
+.ext.pressed { background: var(--pressed); }
+.ext img { width: 16px; height: 16px; }
+
+/* Бейдж — как его рисует Chrome: у правого нижнего угла иконки. */
+.badge {
+  position: absolute;
+  right: -1px;
+  bottom: 2px;
+  min-width: 14px;
+  padding: 2px 3px;
+  border-radius: 4px;
+  background: var(--badge);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+.avatar { width: 22px; height: 22px; margin-left: 4px; border-radius: 50%; background: #7cacf8; flex: none; }
+
+.page { padding: 34px 40px; }
+.page i { display: block; height: 12px; margin-bottom: 16px; border-radius: 6px; background: var(--skeleton); }
+.page i:nth-child(1) { width: 38%; height: 22px; margin-bottom: 28px; }
+.page i:nth-child(2) { width: 82%; }
+.page i:nth-child(3) { width: 74%; }
+.page i:nth-child(4) { width: 88%; }
+.page i:nth-child(5) { width: 56%; margin-bottom: 32px; }
+.page i:nth-child(6) { width: 70%; }
+.page i:nth-child(7) { width: 80%; }
+.page i:nth-child(8) { width: 44%; }
+
+/* ——— Popup расширения ——— */
+
+/* right — под правый край иконки расширения в тулбаре. */
+.popup {
+  position: absolute;
+  top: 76px;
+  right: 62px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--popup-shadow);
+}
+.popup iframe { display: block; width: 352px; height: 520px; border: 0; }
+
+/* ——— Страница настроек во всё окно ——— */
+
+.window .options { position: absolute; inset: 78px 0 0; width: 100%; height: calc(100% - 78px); border: 0; }
