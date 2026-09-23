@@ -255,5 +255,5 @@ OAuth, от которого расширение сознательно отк�
 названия и логотипы сервисов — товарные знаки Google LLC.</sub>
 
 <!-- После публикации в Chrome Web Store замените ссылку ниже на страницу расширения:
-     https://chromewebstore.google.com/detail/<ID> -->
+     https://chromewebstore.google.com/detail/ifdinmakpglpbkmnaaeaplbgphbkgdgj -->
 [webstore]: https://github.com/CoolyWooly/mail_checker/releases/latest
